@@ -1,3 +1,14 @@
+//  JUST for FUN
+
+const dateParams = {month: 'long', day: 'numeric', year: 'numeric' };
+let getTheDate  = () => new Date().toLocaleDateString( 'en-US', dateParams);
+
+
+const dateInfo = document.querySelector('.date_ME');
+dateInfo.innerHTML = getTheDate().toUpperCase();
+
+
+
 class TabLink {
   constructor(tabElement) {
     console.log('!!!!!!!! inside TabLink');
