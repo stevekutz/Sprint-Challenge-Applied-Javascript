@@ -152,6 +152,10 @@ body {
   text-align: right;
   margin-right: 25px;
   flex: 1;
+  color: deeppink;
+}
+.header .temp:after {
+  content: '\00b0';
 }
 .tabs {
   border-bottom: 1px solid lightgrey;
