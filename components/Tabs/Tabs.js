@@ -4,7 +4,7 @@ class TabLink {
 
     // assign this.tabElement to the tabElement DOM reference
     this.tabElement = tabElement;
-    console.log('each tabElement is', this.tabElement);
+    // console.log('each tabElement is', this.tabElement);
 
     // Get the `data-tab` value from this.tabElement and store it here
     this.tabData = this.tabElement.dataset.tab;
@@ -21,7 +21,7 @@ class TabLink {
     }
 
     // Each data-tab group is now represented !!!
-    console.log('!!!!!!!!!!!! this.cards is   ', this.cards);
+      // console.log('!!!!!!!!!!!! this.cards is   ', this.cards);
 
 
 
@@ -32,7 +32,7 @@ class TabLink {
    this.cards = Array.from(this.cards).map(card => {
 
      // console.log(`    giving ${card} to TabCard`);    //  NOTE: this doesn't lole template literal
-        console.log(`$$$$$$  giving this to TabCard`, card);   // nice !!! I see what we pass
+        // console.log(`$$$$$$  giving this to TabCard`, card);   // nice !!! I see what we pass
 
         new TabCard(card);
      });
@@ -42,24 +42,32 @@ class TabLink {
   }
 
   selectTab(){
+    //    console.log('INSIDE selectTab() !!!!!!!!!!   ');
 
     // Select all elements with the .tab class on them
-    // const tabs = document.querySelectorAll();
+     const tabs = document.querySelectorAll('.tab');
+          console.log('****  tabs NodeList is ', tabs);
 
     // Iterate through the NodeList removing the .active-tab class from each element
-    // tabs.forEach()
+    tabs.forEach(tab => tab.classList.remove('active-tab') );
+    console.log('****  AFTER removal ******     tabs NodeList is ', tabs);
 
     // Select all of the elements with the .card class on them
-    // const cards = ;
+    const cards = document.querySelectorAll('.card');
+        console.log('@@@@@    cards NodeList is ', cards);
 
-    // Iterate through the NodeList setting the display style each one to 'none'
-    // cards.forEach()
+    // Iterate through the NodeList setting the display style of each one to 'none'
+    cards.forEach(card => card.style.display = 'none');
 
     // Add a class of ".active-tab" to this.tabElement
-    // this.tabElement;
+    this.tabElement.classList.add('active-tab');
+      console.log('ACTIVE TAB IS ', this.tabElement);   // sweeet
 
-    // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-    // this.cards.forEach(card => card.selectCard());
+    // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class.
+    // Just un-comment the code and study what is happening here.
+            // we SHOULD just be adding display: flex
+
+     this.cards.forEach(card => card.selectCard() );
   }
 }
 
@@ -72,7 +80,9 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    this.cardElement.style = 'display: flex';
+    console.log('   !!!!!!!!!!!!  WE ARE INSIDE   selectCard() ');
+
+    // this.cardElement.style = 'display: flex';
   }
 
 }
