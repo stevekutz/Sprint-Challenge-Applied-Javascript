@@ -31,10 +31,10 @@ class TabLink {
      // Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class.
    this.cards = Array.from(this.cards).map(card => {
 
-     // console.log(`    giving ${card} to TabCard`);    //  NOTE: this doesn't lole template literal
-        // console.log(`$$$$$$  giving this to TabCard`, card);   // nice !!! I see what we pass
+     // console.log(`    giving ${card} to TabCard`);    //  NOTE: this doesn't console template literal
+         console.log(`$$$$$$  giving this to TabCard`, card);   // nice !!! I see what we pass
 
-        new TabCard(card);
+            return new TabCard(card);    // WRITE    I will always return something from map   1000x
      });
 
     // Add a click event that invokes this.selectTab
@@ -68,24 +68,29 @@ class TabLink {
             // we SHOULD just be adding display: flex
 
      this.cards.forEach(card => card.selectCard() );
+
+     // console.log('$$$$$$$$$$$$     this.cards is NOW', this.cards);
   }
 }
 
 class TabCard {
   constructor(cardElement){
     // Assign this.cardElement to the cardElement DOM reference
-    // console.log(`             *********** TabCard  will take care of that data from `, cardElement);
 
     this.cardElement = cardElement;
+
+    //  console.log(`             *********** TabCard  will take care of that data from `, this.cardElement);
+
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
     console.log('   !!!!!!!!!!!!  WE ARE INSIDE   selectCard() ');
 
-    // this.cardElement.style = 'display: flex';
+    this.cardElement.style = 'display: flex';
   }
 
 }
+
 
 // START HERE:
 
