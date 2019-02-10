@@ -1,18 +1,20 @@
 class Carousel {
-  constructor( c_elem ) {
+  constructor( carouselElement ) {
     console.log('###########  inside Carousel constructor');
-    this.c_elem = c_elem;
+    this.carouselElement = carouselElement;
+    console.log('carouselElement is ', this.carouselElement);
 
-    this.c_img = c_elem.querySelectorAll('img');
+    this.carouselImages = carouselElement.querySelectorAll('img');
+
 
     this.currentIndex = 0;
-
-    this.c_img[this.currentIndex].style.display = 'flex';
+    this.currentImage = this.carouselImages[this.currentIndex];
+    this.currentImage.style.display = 'flex';
 
 
     // need reference to left & right
-    this.left_btn = this.c_elem.querySelector('.left-button');
-    this.right_btn = this.c_elem.querySelector('.right-button');
+    this.left_btn = this.carouselElement.querySelector('.left-button');
+    this.right_btn = this.carouselElement.querySelector('.right-button');
 
     // build event listeners for left & right button divs
     this.left_btn.addEventListener('click', () => this.left() );
@@ -23,16 +25,31 @@ class Carousel {
 
 
   left() {
-     console.log('inside left, I can see index', this.currentIndex);
+
+     this.currentIndex = this.currentIndex - 1;
 
 
+    console.log('inside of left, currentIndex changed to ', this.currentIndex);
+
+
+    this.showImage();
 
   }
 
   right() {
-    console.log('inside right');
+
+    this.currentIndex = this.currentIndex + 1;
+
+    console.log('inside of left, currentIndex changed to ', this.currentIndex);
+    
+    this.showImage();
   }
 
+  showImage() {
+    this.currentImage.style.display = 'none';
+    this.currentImage = this.carouselImages[this.currentIndex];
+    this.currentImage.style.display = 'flex';
+  }
 
 }
 
