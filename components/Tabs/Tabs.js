@@ -95,9 +95,10 @@ class TabCard {
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    console.log('   !!!!!!!!!!!!  WE ARE INSIDE   selectCard() ');
+    // console.log('   !!!!!!!!!!!!  WE ARE INSIDE   selectCard() ');
 
     this.cardElement.style = 'display: flex';
+
   }
 
 }
