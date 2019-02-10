@@ -5,9 +5,13 @@ class Carousel {
     console.log('carouselElement is ', this.carouselElement);
 
     this.carouselImages = carouselElement.querySelectorAll('img');
+    console.log('this carousel images  ', this.carouselImages);
 
+
+    console.log('length of this.carouseImages is ', this.carouselImages.length);
 
     this.currentIndex = 0;
+    this.length = this.carouselImages.length - 1;
     this.currentImage = this.carouselImages[this.currentIndex];
     this.currentImage.style.display = 'flex';
 
@@ -25,23 +29,23 @@ class Carousel {
 
 
   left() {
-
-     this.currentIndex = this.currentIndex - 1;
-
+     this.currentIndex === 0
+             ? this.currentIndex = this.carouselImages.length - 1
+             : this.currentIndex = this.currentIndex - 1;
 
     console.log('inside of left, currentIndex changed to ', this.currentIndex);
-
 
     this.showImage();
 
   }
 
   right() {
+      this.currentIndex === this.length
+            ? this.currentIndex = 0
+            : this.currentIndex = this.currentIndex + 1;
 
-    this.currentIndex = this.currentIndex + 1;
+    console.log('inside of right, currentIndex changed to ', this.currentIndex);
 
-    console.log('inside of left, currentIndex changed to ', this.currentIndex);
-    
     this.showImage();
   }
 
@@ -49,6 +53,9 @@ class Carousel {
     this.currentImage.style.display = 'none';
     this.currentImage = this.carouselImages[this.currentIndex];
     this.currentImage.style.display = 'flex';
+
+    console.log(this.currentImage);
+    // this.currentImage.style.transition;
   }
 
 }
