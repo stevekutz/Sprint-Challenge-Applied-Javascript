@@ -6,9 +6,12 @@
   border-bottom: 1px solid @lambda-times-color-lightgrey;
 }
 
-.flex(@jc: none, @ai: none, @dir: row) {
+
+// added wrap parameter
+.flex(@jc: none, @ai: none, @dir: row, @wrap: wrap) {
   display: flex;
   justify-content: @jc;
   align-items: @ai;
   flex-direction: @dir;
+  flex-wrap: @wrap;
 }

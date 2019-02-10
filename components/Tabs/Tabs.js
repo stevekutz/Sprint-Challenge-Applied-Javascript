@@ -76,11 +76,8 @@ class TabLink {
 
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class.
     // Just un-comment the code and study what is happening here.
-            // we SHOULD just be adding display: flex
-
      this.cards.forEach(card => card.selectCard() );
 
-     // console.log('$$$$$$$$$$$$     this.cards is NOW', this.cards);
   }
 }
 
@@ -96,7 +93,6 @@ class TabCard {
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
     // console.log('   !!!!!!!!!!!!  WE ARE INSIDE   selectCard() ');
-
     this.cardElement.style = 'display: flex';
 
   }
@@ -114,10 +110,4 @@ class TabCard {
 
 
 let tabs = document.querySelectorAll('.tab');
-[...tabs].forEach(tab => {
-
-    // console.log('the tab we pass to TabLink  will be', tab);
-    new TabLink(tab)
-
-  }
-);
+[...tabs].forEach(tab =>  new TabLink(tab)  );
