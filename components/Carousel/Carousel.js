@@ -26,7 +26,10 @@ class Carousel {
     this.right_btn.addEventListener('click', () => this.right() );
 
 
+    this.selectRadioButton();
 
+
+   // this.inputs.forEach(input => console.log (`the value of image ${input.dataset.img} is`, input.checked ));
 
 
   }
@@ -61,6 +64,26 @@ class Carousel {
 
     console.log(this.currentImage);
     // this.currentImage.style.transition = 'opacity 2s';
+  }
+
+
+  selectRadioButton() {
+    // get NodeList of all input elements
+    this.inputs = document.querySelectorAll('input');
+
+    // find checked
+    this.inputs.forEach(input => {
+      if(input.checked) {
+        console.log(input.dataset.img);
+        this.currentIndex = input.dataset.img;
+      }
+
+    });
+
+    // toggle all other radio buttons
+
+    this.showImage();
+
   }
 
 }
