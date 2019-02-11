@@ -4,61 +4,6 @@
 .border-bottom-grey {
   border-bottom: 1px solid lightgrey;
 }
-.carousel {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-  margin-top: 16px;
-}
-@media (min-width: 1200px) {
-  .carousel {
-    width: 1200px;
-  }
-}
-.carousel .left-button,
-.carousel .right-button {
-  display: flex;
-  justify-content: center;
-  align-items: none;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  color: #fff;
-  background-color: #333;
-  font-size: 40px;
-  border-radius: 50%;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
-.carousel .left-button:hover,
-.carousel .right-button:hover {
-  color: #333;
-  background-color: #fff;
-  border: 2px solid #333;
-}
-.carousel .left-button {
-  top: 50%;
-  left: 25px;
-  transform: translate(0, -50%);
-}
-.carousel .right-button {
-  top: 50%;
-  right: 25px;
-  transform: translate(0, -50%);
-}
-.carousel img {
-  width: 100%;
-  display: none;
-}
 @font-face {
   font-family: 'PT Sans';
   font-style: italic;
@@ -83,6 +28,32 @@
   font-weight: 700;
   src: local('PT Sans Bold'), local('PTSans-Bold'), url(https://fonts.gstatic.com/s/ptsans/v9/jizfRExUiTo99u79B_mh0O6tKA.ttf) format('truetype');
 }
+/*
+@import '../components/TopBar/TopBar';
+@import '../components/Header/Header';
+@import '../components/Tabs/Tabs';
+@import '../components/Cards/Cards';
+@import '../components/Carousel/Carousel';
+*/
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: #f1f1f1;
+  color: #333;
+  font-family: 'PT Sans', sans-serif;
+}
 .top-bar {
   width: 100%;
   display: flex;
@@ -98,8 +69,8 @@
 .top-bar .container {
   width: 100%;
   display: flex;
-  justify-content: none;
-  align-items: none;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
@@ -114,7 +85,7 @@
 }
 .top-bar .container .container-left {
   display: flex;
-  justify-content: none;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -149,7 +120,7 @@
 }
 .top-bar .container .container-right {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -163,7 +134,7 @@
 }
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -264,8 +235,8 @@
 }
 .cards-container {
   display: flex;
-  justify-content: space-evenly;
-  align-items: none;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   align-content: center;
   width: 100%;
@@ -280,9 +251,9 @@
 .cards-container .card {
   border-bottom: 1px solid lightgrey;
   display: flex;
-  justify-content: space-between;
-  align-items: none;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
   background-color: #fff;
@@ -296,7 +267,7 @@
 }
 .cards-container .card .author {
   display: flex;
-  justify-content: none;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -317,29 +288,72 @@
   letter-spacing: 1px;
   font-weight: bold;
 }
-* {
-  box-sizing: border-box;
-}
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-body {
+.carousel {
+  width: 100%;
   display: flex;
-  justify-content: none;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
-  background-color: #f1f1f1;
-  color: #333;
-  font-family: 'PT Sans', sans-serif;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
 }
-/*
-@import '../components/TopBar/TopBar';
-@import '../components/Header/Header';
-@import '../components/Tabs/Tabs';
-@import '../components/Cards/Cards';
-@import '../components/Carousel/Carousel';
-*/
+@media (min-width: 1200px) {
+  .carousel {
+    width: 1200px;
+  }
+}
+.carousel .left-button,
+.carousel .right-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  color: #fff;
+  background-color: #333;
+  font-size: 40px;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+}
+.carousel .left-button {
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+}
+.carousel .right-button {
+  top: 50%;
+  right: 25px;
+  transform: translate(0, -50%);
+}
+.carousel img {
+  width: 100%;
+  display: none;
+}
+.carousel_nav {
+  border: 4px solid dodgerblue;
+  height: 50px;
+}
+.carousel_nav {
+  border: 4px solid dodgerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 50px;
+}

@@ -11,9 +11,10 @@ class Carousel {
     console.log('length of this.carouseImages is ', this.carouselImages.length);
 
     this.currentIndex = 0;
-    this.length = this.carouselImages.length - 1;
+    this.maxIndex = this.carouselImages.length - 1;
     this.currentImage = this.carouselImages[this.currentIndex];
     this.currentImage.style.display = 'flex';
+
 
 
     // need reference to left & right
@@ -24,13 +25,22 @@ class Carousel {
     this.left_btn.addEventListener('click', () => this.left() );
     this.right_btn.addEventListener('click', () => this.right() );
 
+
+    // Want to create input radio buttons for each image
+    if(this.maxIndex > 0) {
+      console.log(`~~~~~~~~~~  we have ${this.maxIndex} images `);
+
+    }
+
+
+
   }
 
 
 
   left() {
      this.currentIndex === 0
-             ? this.currentIndex = this.carouselImages.length - 1
+             ? this.currentIndex = this.maxIndex
              : this.currentIndex = this.currentIndex - 1;
 
     console.log('inside of left, currentIndex changed to ', this.currentIndex);
@@ -40,7 +50,7 @@ class Carousel {
   }
 
   right() {
-      this.currentIndex === this.length
+      this.currentIndex === this.maxIndex
             ? this.currentIndex = 0
             : this.currentIndex = this.currentIndex + 1;
 
@@ -55,10 +65,21 @@ class Carousel {
     this.currentImage.style.display = 'flex';
 
     console.log(this.currentImage);
-    // this.currentImage.style.transition;
+    // this.currentImage.style.transition = 'opacity 2s';
   }
 
 }
+
+class CarouselNAV {
+  constructor() {
+
+
+
+  }
+}
+
+
+
 
 let carouselDOM = document.querySelector('.carousel');
       //console.log('~~~~~~~~~~~  carousel gives back ', carouselDOM);

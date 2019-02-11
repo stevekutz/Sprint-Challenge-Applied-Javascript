@@ -1,8 +1,9 @@
 .carousel {
   .width-100();
-  .flex(center, center);
+//  .flex(center, center);
+  .flex(center, center, row, wrap, center);
   height: 500px;
-//  height: 200px;
+  //height: 200px;
   position: relative;
   overflow: hidden;
   margin-top: 16px;
@@ -10,7 +11,8 @@
     width: 1200px;
   }
   .left-button, .right-button {
-    .flex(center);
+  //  .flex(center);
+    .flex(center, center, row, wrap, center);
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
     font-size: 40px;
@@ -39,4 +41,9 @@
     .width-100();
     display: none;
   }
+}
+
+.carousel_nav {
+  @b_db();
+  height: 50px;
 }

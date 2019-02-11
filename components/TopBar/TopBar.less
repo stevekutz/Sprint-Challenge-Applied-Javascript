@@ -14,7 +14,8 @@
       width: 1280px;
     }
     .container-left {
-      .flex(none, center);
+      //.flex(center, center);
+      .flex(center, center, row, wrap, center);
       flex: 1;
       font-size: 11px;
       span {
@@ -24,7 +25,8 @@
       }
     }
     .container-center {
-      .flex(center, center);
+      .flex(center, center, row, wrap, center);
+      // .flex(center, center);
       flex: 3;
       font-size: 9px;
       span {
@@ -39,7 +41,8 @@
       }
     }
     .container-right {
-      .flex(flex-end, center);
+      .flex(center, center, row, wrap, center);
+      //.flex(flex-end, center);
       flex: 1;
       font-size: 11px;
       font-weight: bold;
