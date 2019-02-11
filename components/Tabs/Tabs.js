@@ -11,7 +11,7 @@ dateInfo.innerHTML = getTheDate().toUpperCase();
 
 class TabLink {
   constructor(tabElement) {
-    console.log('!!!!!!!! inside TabLink');
+    // console.log('!!!!!!!! inside TabLink');
 
     // assign this.tabElement to the tabElement DOM reference
     this.tabElement = tabElement;
@@ -43,7 +43,7 @@ class TabLink {
    this.cards = Array.from(this.cards).map(card => {
 
      // console.log(`    giving ${card} to TabCard`);    //  NOTE: this doesn't console template literal
-         console.log(`$$$$$$  giving this to TabCard`, card);   // nice !!! I see what we pass
+         // console.log(`$$$$$$  giving this to TabCard`, card);   // nice !!! I see what we pass
 
             return new TabCard(card);    // WRITE    I will always return something from map   1000x
      });
@@ -57,26 +57,26 @@ class TabLink {
 
     // Select all elements with the .tab class on them
      const tabs = document.querySelectorAll('.tab');
-          console.log('****  tabs NodeList is ', tabs);
+          //console.log('****  tabs NodeList is ', tabs);
 
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach(tab => tab.classList.remove('active-tab') );
-    console.log('****  AFTER removal ******     tabs NodeList is ', tabs);
+    //console.log('****  AFTER removal ******     tabs NodeList is ', tabs);
 
     // Select all of the elements with the .card class on them
     const cards = document.querySelectorAll('.card');
-        console.log('@@@@@    cards NodeList is ', cards);
+        //console.log('@@@@@    cards NodeList is ', cards);
 
     // Iterate through the NodeList setting the display style of each one to 'none'
     cards.forEach(card => card.style.display = 'none');
 
     // Add a class of ".active-tab" to this.tabElement
     this.tabElement.classList.add('active-tab');
-      console.log('ACTIVE TAB IS ', this.tabElement);   // sweeet
+      //console.log('ACTIVE TAB IS ', this.tabElement);   // sweeet
 
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class.
     // Just un-comment the code and study what is happening here.
-     this.cards.forEach(card => card.selectCard() );
+     //this.cards.forEach(card => card.selectCard() );
 
   }
 }

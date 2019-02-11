@@ -7,6 +7,16 @@ class Carousel {
     this.carouselImages = carouselElement.querySelectorAll('img');
     console.log('this carousel images  ', this.carouselImages);
 
+    // create object for each radio button
+    this.inputs = document.querySelectorAll('input');
+    console.log('inputs NodeList is  ', this.inputs);
+    this.inputs.forEach(input => {
+      console.log('input is ', input);
+      new CarouselRadioButton(input);
+
+
+    } );
+
 
     console.log('length of this.carouseImages is ', this.carouselImages.length);
 
@@ -26,7 +36,9 @@ class Carousel {
     this.right_btn.addEventListener('click', () => this.right() );
 
 
-    this.selectRadioButton();
+
+
+    this.selectedRadioButton();
 
 
    // this.inputs.forEach(input => console.log (`the value of image ${input.dataset.img} is`, input.checked ));
@@ -67,9 +79,15 @@ class Carousel {
   }
 
 
-  selectRadioButton() {
+  selectedRadioButton() {
     // get NodeList of all input elements
     this.inputs = document.querySelectorAll('input');
+
+    // have to build logic to ony select one radio button, this is fun!
+    // but may be easier with classes?
+
+
+
 
     // find checked
     this.inputs.forEach(input => {
@@ -88,12 +106,20 @@ class Carousel {
 
 }
 
-class CarouselNAV {
-  constructor() {
+class CarouselRadioButton {
+  constructor(button) {
 
+    this.radioButton = button;
+    console.log('button passed in is ', this.radioButton);
 
+    this.data = this.radioButton.dataset.img;
+    console.log('this.data is img ', this.data );
 
+    this.radioButton.addEventListener('click', () => this.checked() );
   }
+   checked() {
+      console.log(`radio button ${this.data} was clicked`);
+   }
 }
 
 
