@@ -8,10 +8,11 @@
 
 
 // added wrap parameter
-.flex(@jc: none, @ai: none, @dir: row, @wrap: wrap) {
+.flex(@jc: none, @ai: none, @dir: row, @wrap: wrap, @ac: center) {
   display: flex;
   justify-content: @jc;
   align-items: @ai;
   flex-direction: @dir;
   flex-wrap: @wrap;
+  align-content: @ac
 }
