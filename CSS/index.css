@@ -42,6 +42,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: orange;
 }
 body {
   display: flex;
@@ -346,6 +347,9 @@ body {
 .carousel_nav {
   border: 4px solid dodgerblue;
   height: 50px;
+}
+.carousel_nav input {
+  cursor: pointer;
 }
 .carousel_nav {
   border: 4px solid dodgerblue;

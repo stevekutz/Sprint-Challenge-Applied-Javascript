@@ -26,11 +26,6 @@ class Carousel {
     this.right_btn.addEventListener('click', () => this.right() );
 
 
-    // Want to create input radio buttons for each image
-    if(this.maxIndex > 0) {
-      console.log(`~~~~~~~~~~  we have ${this.maxIndex} images `);
-
-    }
 
 
 
