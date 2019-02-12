@@ -1,6 +1,6 @@
 .top-bar {
   .width-100();
-  .flex(center, center, row, wrap);
+  .flex(center);
   position: fixed;
   height: 44px;
   background-color: @lambda-times-color-primary;
@@ -14,8 +14,7 @@
       width: 1280px;
     }
     .container-left {
-      //.flex(center, center);
-      .flex(center, center, row, wrap, center);
+      .flex(none, center);
       flex: 1;
       font-size: 11px;
       span {
@@ -25,8 +24,7 @@
       }
     }
     .container-center {
-      .flex(center, center, row, wrap, center);
-      // .flex(center, center);
+      .flex(center, center);
       flex: 3;
       font-size: 9px;
       span {
@@ -41,8 +39,7 @@
       }
     }
     .container-right {
-      .flex(center, center, row, wrap, center);
-      //.flex(flex-end, center);
+      .flex(flex-end, center);
       flex: 1;
       font-size: 11px;
       font-weight: bold;

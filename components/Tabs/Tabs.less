@@ -1,8 +1,6 @@
 .tabs {
-  // .flex(@jc: none, @ai: none, @dir: row, @wrap: wrap)
   .border-bottom-grey();
-  //.flex(center, center);
-  .flex(center, center, row, wrap, center);
+  .flex(center, center);
   .width-100();
   height: 47px;
   background-color: @lambda-times-color-white;
@@ -10,16 +8,14 @@
     width: 1280px;
   }
   .topics {
-   // .flex(center, center, row, wrap);
-    .flex(center, center, row, wrap, center);
+    .flex(none, center);
     .title {
       font-size: 12px;
       letter-spacing: 1px;
       font-weight: bold;
     }
     .tab {
-      @b_db();
-      .flex(center, center, row, wrap, center);
+      .flex(none, center);
       color: @lambda-times-color-white;
       background-color: @lambda-times-color-primary;
       margin: 0 5px;

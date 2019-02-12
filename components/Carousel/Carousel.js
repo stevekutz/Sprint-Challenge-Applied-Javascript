@@ -7,24 +7,13 @@ class Carousel {
     this.carouselImages = carouselElement.querySelectorAll('img');
     console.log('this carousel images  ', this.carouselImages);
 
-    // create object for each radio button
-    this.inputs = document.querySelectorAll('input');
-    console.log('inputs NodeList is  ', this.inputs);
-    this.inputs.forEach(input => {
-      console.log('input is ', input);
-      new CarouselRadioButton(input);
-
-
-    } );
-
 
     console.log('length of this.carouseImages is ', this.carouselImages.length);
 
     this.currentIndex = 0;
-    this.maxIndex = this.carouselImages.length - 1;
+    this.length = this.carouselImages.length - 1;
     this.currentImage = this.carouselImages[this.currentIndex];
     this.currentImage.style.display = 'flex';
-
 
 
     // need reference to left & right
@@ -35,23 +24,14 @@ class Carousel {
     this.left_btn.addEventListener('click', () => this.left() );
     this.right_btn.addEventListener('click', () => this.right() );
 
-
-
-
-    this.selectedRadioButton();
-
-
-   // this.inputs.forEach(input => console.log (`the value of image ${input.dataset.img} is`, input.checked ));
-
-
   }
 
 
 
   left() {
-     this.currentIndex === 0
-             ? this.currentIndex = this.maxIndex
-             : this.currentIndex = this.currentIndex - 1;
+    this.currentIndex === 0
+      ? this.currentIndex = this.carouselImages.length - 1
+      : this.currentIndex = this.currentIndex - 1;
 
     console.log('inside of left, currentIndex changed to ', this.currentIndex);
 
@@ -60,9 +40,9 @@ class Carousel {
   }
 
   right() {
-      this.currentIndex === this.maxIndex
-            ? this.currentIndex = 0
-            : this.currentIndex = this.currentIndex + 1;
+    this.currentIndex === this.length
+      ? this.currentIndex = 0
+      : this.currentIndex = this.currentIndex + 1;
 
     console.log('inside of right, currentIndex changed to ', this.currentIndex);
 
@@ -75,58 +55,13 @@ class Carousel {
     this.currentImage.style.display = 'flex';
 
     console.log(this.currentImage);
-    // this.currentImage.style.transition = 'opacity 2s';
-  }
-
-
-  selectedRadioButton() {
-    // get NodeList of all input elements
-    this.inputs = document.querySelectorAll('input');
-
-    // have to build logic to ony select one radio button, this is fun!
-    // but may be easier with classes?
-
-
-
-
-    // find checked
-    this.inputs.forEach(input => {
-      if(input.checked) {
-        console.log(input.dataset.img);
-        this.currentIndex = input.dataset.img;
-      }
-
-    });
-
-    // toggle all other radio buttons
-
-    this.showImage();
-
+    // this.currentImage.style.transition;
   }
 
 }
-
-class CarouselRadioButton {
-  constructor(button) {
-
-    this.radioButton = button;
-    console.log('button passed in is ', this.radioButton);
-
-    this.data = this.radioButton.dataset.img;
-    console.log('this.data is img ', this.data );
-
-    this.radioButton.addEventListener('click', () => this.checked() );
-  }
-   checked() {
-      console.log(`radio button ${this.data} was clicked`);
-   }
-}
-
-
-
 
 let carouselDOM = document.querySelector('.carousel');
-      //console.log('~~~~~~~~~~~  carousel gives back ', carouselDOM);
+//console.log('~~~~~~~~~~~  carousel gives back ', carouselDOM);
 
 
 let carousel = new Carousel(carouselDOM);

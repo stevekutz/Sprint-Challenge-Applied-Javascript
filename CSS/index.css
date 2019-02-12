@@ -28,13 +28,6 @@
   font-weight: 700;
   src: local('PT Sans Bold'), local('PTSans-Bold'), url(https://fonts.gstatic.com/s/ptsans/v9/jizfRExUiTo99u79B_mh0O6tKA.ttf) format('truetype');
 }
-/*
-@import '../components/TopBar/TopBar';
-@import '../components/Header/Header';
-@import '../components/Tabs/Tabs';
-@import '../components/Cards/Cards';
-@import '../components/Carousel/Carousel';
-*/
 * {
   box-sizing: border-box;
 }
@@ -42,15 +35,12 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: orange;
 }
 body {
   display: flex;
-  justify-content: center;
+  justify-content: none;
   align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
   background-color: #f1f1f1;
   color: #333;
   font-family: 'PT Sans', sans-serif;
@@ -59,10 +49,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: none;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   position: fixed;
   height: 44px;
   background-color: #333;
@@ -70,11 +58,9 @@ body {
 .top-bar .container {
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: none;
+  align-items: none;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   color: #fff;
   letter-spacing: 1px;
   padding: 0 10px;
@@ -86,11 +72,9 @@ body {
 }
 .top-bar .container .container-left {
   display: flex;
-  justify-content: center;
+  justify-content: none;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   flex: 1;
   font-size: 11px;
 }
@@ -104,8 +88,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   flex: 3;
   font-size: 9px;
 }
@@ -121,11 +103,9 @@ body {
 }
 .top-bar .container .container-right {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   flex: 1;
   font-size: 11px;
   font-weight: bold;
@@ -135,11 +115,9 @@ body {
 }
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   background-color: #fff;
   border-bottom: 1px solid lightgrey;
   width: 100%;
@@ -185,8 +163,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   width: 100%;
   height: 47px;
   background-color: #fff;
@@ -198,11 +174,9 @@ body {
 }
 .tabs .topics {
   display: flex;
-  justify-content: center;
+  justify-content: none;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
 }
 .tabs .topics .title {
   font-size: 12px;
@@ -210,13 +184,10 @@ body {
   font-weight: bold;
 }
 .tabs .topics .tab {
-  border: 4px solid dodgerblue;
   display: flex;
-  justify-content: center;
+  justify-content: none;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   color: #fff;
   background-color: #333;
   margin: 0 5px;
@@ -236,10 +207,9 @@ body {
 }
 .cards-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: none;
   flex-direction: row;
-  align-content: center;
   width: 100%;
   margin-top: 16px;
   flex-wrap: wrap;
@@ -252,11 +222,9 @@ body {
 .cards-container .card {
   border-bottom: 1px solid lightgrey;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
+  justify-content: space-between;
+  align-items: none;
+  flex-direction: column;
   background-color: #fff;
   width: 380px;
   margin-bottom: 16px;
@@ -268,11 +236,9 @@ body {
 }
 .cards-container .card .author {
   display: flex;
-  justify-content: center;
+  justify-content: none;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   margin-top: 15px;
 }
 .cards-container .card .author .img-container {
@@ -295,8 +261,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   height: 500px;
   position: relative;
   overflow: hidden;
@@ -311,10 +275,8 @@ body {
 .carousel .right-button {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: none;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   color: #fff;
   background-color: #333;
   font-size: 40px;
@@ -343,21 +305,4 @@ body {
 .carousel img {
   width: 100%;
   display: none;
-}
-.carousel_nav {
-  border: 4px solid dodgerblue;
-  height: 50px;
-}
-.carousel_nav input {
-  cursor: pointer;
-}
-.carousel_nav {
-  border: 4px solid dodgerblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  height: 50px;
 }

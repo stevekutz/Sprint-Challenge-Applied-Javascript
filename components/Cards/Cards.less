@@ -1,6 +1,5 @@
 .cards-container {
-  //.flex(space-evenly);
-  .flex(center, center, row, wrap, center);
+  .flex(space-evenly);
   .width-100();
   margin-top: 16px;
   flex-wrap: wrap;
@@ -9,8 +8,7 @@
   }
   .card {
     .border-bottom-grey();
-   // .flex(space-between, center, column);
-    .flex(center, center, row, wrap, center);
+    .flex(space-between, none, column);
     background-color: @lambda-times-color-white;
     width: 380px;
     margin-bottom: 16px;
@@ -20,8 +18,7 @@
       font-family: Didot, serif;
     }
     .author {
-     // .flex(center, center);
-      .flex(center, center, row, wrap, center);
+      .flex(none, center);
       margin-top: 15px;
       .img-container {
         padding-right: 10px;
